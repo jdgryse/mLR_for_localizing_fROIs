@@ -1,5 +1,7 @@
 # Welcome
 
+This repository accompanies the paper "A likelihood approach for functional localization in fMRI"
+
 1)  This repository holds both code and data files that can be used across platforms (linux, Windows, macOS) to perform all methods mentioned in the original paper. The results of the paper are obtained with the following operating system: macOS Mojave, version 10.14.4.
 2)  - All .R files contain code that should be run with the statistal program R. In order to run this code, the user should install R or RStudio. The version of R used for the results in the paper is R 3.5.3. Once R is installed, the code can readily be run in the console, with the exception for the paths where data are stored locally, which should be adjusted accordingly,  and additional R packages that may not already be installed locally.
     - All .sh files are shell scripts (Unix language), with code that can be run in a Bash shell. In order for most
@@ -9,7 +11,7 @@
 
 ## simulations.R
 
-In this file, the subject maps are simulated analyzed and thresholded using NHST, the likelihood ratio (LR) and the  maximized likelihood ratio (mLR) method. Their Type I, Type II and average error rates are computed. This is described in Section X of the paper. The resulting error rates are used to produce Figure X in the paper.
+In this file, the subject maps are simulated analyzed and thresholded using NHST, the likelihood ratio (LR) and the  maximized likelihood ratio (mLR) method. Their Type I, Type II and average error rates are computed. This is described in Section 2.3 of the paper. The resulting error rates are used to produce the Figures in Section 3.2 of the paper.
 
 ## make_conditions.R
 
@@ -27,24 +29,24 @@ This file contains the function to estimate the parameters of the GLM, their sta
 
 ## Data
 
-A toy data set in order to perform the cross-validation performed in the original study, as well as an overall brain mask for this “simulated individual”, since the data described in Section X of the original paper are not freely available. These are all NIFTI files that can be read into R or FSL or the fMRI data analysis program of your choice. 
+A toy data set in order to perform the cross-validation performed in the original study, as well as an overall brain mask for this “simulated individual”, since the data described in Section 2.2 of the original paper are not freely available. These are all NIFTI files that can be read into R or FSL or the fMRI data analysis program of your choice. 
 
-## design.
+### design.
 
 These files contain information concerning the design of the fixed effects analysis in FSL, needed for the flameo command in real_es_groundtruth.sh and do not need to be adjusted in order to work for the toy data set.
 
-## real_analysis_LR_mLR.R
+### real_analysis_LR_mLR.R
 
-In this file, the LR and mLR method are performed on the left out run under different parameter configurations, which is described in Section X of the paper. The result of this file are SPMs with either LRs or mLRs. The resulting SPMs were then used to produce Figure X in the paper.
+In this file, the LR and mLR method are performed on the left out run under different parameter configurations, which is described in Section 2.2 of the paper. The result of this file are SPMs with either LRs or mLRs. The resulting SPMs were then used to produce the Figures of Section 3.1 in the paper.
 
-## real_designCrossVal.R
+### real_designCrossVal.R
 
 Here, the design. files mentioned above are made.
 
-## real_es_groundtruth.sh
+### real_es_groundtruth.sh
 
 Here, the ground truth of effect sizes for each step of the cross-validation is constructed. The ground truth of effect sizes is then used in real_analysis_LR_mLR.R.
 
-## real_writefiles.R
+### real_writefiles.R
 
 In this file, the overall brain mask for the “simulated individual” is constructed. This is then used in  real_analysis_LR_mLR.R.
