@@ -4,8 +4,7 @@ This repository accompanies the paper "A likelihood approach for functional loca
 
 1)  This repository holds both code and data files that can be used across platforms (linux, Windows, macOS) to perform all methods mentioned in the original paper. The results of the paper are obtained with the following operating system: macOS Mojave, version 10.14.4.
 2)  - All .R files contain code that should be run with the statistal program R. In order to run this code, the user should install R or RStudio. The version of R used for the results in the paper is R 3.5.3. Once R is installed, the code can readily be run in the console, with the exception for the paths where data are stored locally, which should be adjusted accordingly,  and additional R packages that may not already be installed locally.
-    - All .sh files are shell scripts (Unix language), with code that can be run in a Bash shell. In order for most
-       commands to work, FSL should be installed on your computer. The results in this paper were obtained with FSL 5.0.9.
+    - All .sh files are shell scripts (Unix language), with code that can be run in a Bash shell. To run some commands, FSL should be installed. The results in this paper were obtained with FSL 5.0.9.
 
 # Simulations for the maximized likelihood ratio paradigm for the definition of fROIs
 
